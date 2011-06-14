@@ -1,0 +1,71 @@
+Install:
+
+1) Pre-requisites:
+
+Python <http://www.python.org/>
+Django <https://www.djangoproject.com/>
+Celery <http://celeryproject.org/>
+FFmpeg <http://ffmpeg.org>
+Apache HTTP <http://httpd.apache.org/>
+modwsgi <http://code.google.com/p/modwsgi/>
+MySql Server <http://www.mysql.com/>
+
+2) Files:
+The 365Video package includes two folders:
+* video365: This is the application folder. Put it in any safe directory: i.e.: /usr/django/video365. (never in /var/www)
+* media: This folder contains all the static media files. Put it in the Apache htdocs folder, i.e.: /var/www/media. 
+
+3) Permissions:
+
+*The folder <installation_dir>/video365/templates/layout/generated and its sub-elements must 
+belong to the apache group (www-data) and have write permission by the group
+
+*The folder <htdocs_dir>/media/uploads and its sub-elements must 
+belong to the apache group (www-data) and have write permission by the group
+
+chown -R :www-data <installation_dir>/video365/templates/layout/generated 
+chmod -R 774 <installation_dir>/video365/templates/layout/generated 
+
+chown -R :www-data <htdocs_dir>/media/uploads
+chmod -R 774 <htdocs_dir>/media/uploads
+
+3) Database
+Create an empty database and a user with privileges.
+
+4) Initial configuration:
+The file <installation_dir>/video365/settings.py contains all the configuration data.
+Options:
+	* DATABASES - set you database information
+	* ADMINS - set your name and e-mail, the system will send a notification message on error.
+	* TIME_ZONE - set the Time Zone for the Application
+	* LANGUAGE_CODE - set the language code for the Application (Check available languages Codes)   
+	* MEDIA_ROOT - set the directory where the media files are installed (/var/www/media/). Make sure to use a trailing slash.
+	* APPLICATION_DIR - set the directory where the Application files are installed (/usr/django/video365/). Make sure to use a trailing slash.
+Mail Setting, set the account the application will use to send notification mails:
+	* EMAIL_USE_TLS = if you are using Google mail or other service over TLS set this to True.
+	* EMAIL_HOST = set the smtp host.
+	* EMAIL_HOST_USER = set the e-mail user.
+	* EMAIL_HOST_PASSWORD = set the e-mail password.
+	* EMAIL_PORT = set the e-mail port.
+
+* SECRET_KEY - set a random secret key, used by the application internally.
+You can create a random key with this script:
+
+from random import choice
+import string
+print ''.join([choice(string.letters + string.digits + string.punctuation) for i in range(50)])
+
+
+4) Database and User creation
+From the Application directory run:
+
+python manage.py syncdb
+
+
+5) WSGI
+In the file change the next line according to the installation directory.
+
+sys.path.append('/usr/django/video365')
+
+
+

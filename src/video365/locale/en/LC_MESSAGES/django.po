@@ -1,0 +1,384 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the 365Video package.
+# Sergio G. Spaolonzi <serge@cobalys.com>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-13 17:44-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: apps/administration/views.py:47
+msgid "Configuration changed."
+msgstr "Configuration changed."
+
+#: apps/administration/views.py:50 apps/tag/views.py:76 apps/tag/views.py:108
+#: apps/videopost/views.py:209 apps/videopost/views.py:246
+msgid "Correct the errors bellow."
+msgstr "Correct the errors bellow."
+
+#: apps/administration/views.py:52
+msgid "There was an error while changing the configuration."
+msgstr "There was an error while changing the configuration."
+
+#: apps/tag/forms.py:25 apps/tag/models.py:26 templates/tag/admin/list.html:16
+msgid "Name"
+msgstr "Name"
+
+#: apps/tag/models.py:30 apps/videopost/models.py:44
+msgid "Tag"
+msgstr "Tag"
+
+#: apps/tag/models.py:31 apps/videopost/forms.py:28 apps/videopost/forms.py:37
+#: helpers/generation_utils.py:69 templates/layout/administration.html:61
+msgid "Tags"
+msgstr "Tags"
+
+#: apps/tag/views.py:50 apps/videopost/views.py:72 apps/videopost/views.py:120
+#: apps/videopost/views.py:148 apps/videopost/views.py:310
+msgid "No Results Found."
+msgstr "No Results Found."
+
+#: apps/tag/views.py:64
+msgid "Create new Tag"
+msgstr "Create new Tag"
+
+#: apps/tag/views.py:73
+msgid "Tag successfully created."
+msgstr "Tag successfully created."
+
+#: apps/tag/views.py:78 apps/tag/views.py:110 apps/tag/views.py:135
+msgid "There was an error while saving the Tag."
+msgstr "There was an error while saving the Tag."
+
+#: apps/tag/views.py:95
+msgid "Edit Tag"
+msgstr "Edit Tag"
+
+#: apps/tag/views.py:104
+msgid "Tag successfully updated."
+msgstr "Tag successfully updated."
+
+#: apps/tag/views.py:133
+msgid "Tag successfully deleted."
+msgstr "Tag successfully deleted."
+
+#: apps/videopost/forms.py:25 apps/videopost/forms.py:32
+#: apps/videopost/models.py:38 templates/videopost/admin/list.html:16
+msgid "Title"
+msgstr "Title"
+
+#: apps/videopost/forms.py:26 apps/videopost/forms.py:33
+#: apps/videopost/models.py:39
+msgid "Description"
+msgstr "Description"
+
+#: apps/videopost/forms.py:27 apps/videopost/forms.py:36
+#: apps/videopost/models.py:42 templates/videopost/admin/list.html:22
+msgid "Enabled"
+msgstr "Enabled"
+
+#: apps/videopost/forms.py:34 apps/videopost/models.py:40
+msgid "Splash Image"
+msgstr "Splash Image"
+
+#: apps/videopost/forms.py:35 apps/videopost/models.py:41
+msgid "Video"
+msgstr "Video"
+
+#: apps/videopost/models.py:32
+msgid "Pending"
+msgstr "Pending"
+
+#: apps/videopost/models.py:33
+msgid "Processing"
+msgstr "Processing"
+
+#: apps/videopost/models.py:34
+msgid "Ready"
+msgstr "Ready"
+
+#: apps/videopost/models.py:35
+msgid "Error"
+msgstr "Error"
+
+#: apps/videopost/models.py:45
+msgid "Locked"
+msgstr "Locked"
+
+#: apps/videopost/models.py:46 templates/videopost/admin/list.html:25
+msgid "State"
+msgstr "State"
+
+#: apps/videopost/models.py:49
+msgid "Video Post"
+msgstr "Video Post"
+
+#: apps/videopost/models.py:50 templates/layout/administration.html:56
+msgid "Video Posts"
+msgstr "Video Posts"
+
+#: apps/videopost/views.py:94
+#, python-format
+msgid "Showing result for %(year)s."
+msgstr "Showing result for %(year)s."
+
+#: apps/videopost/views.py:105
+#, fuzzy, python-format
+msgid "Showing result for: %(month)s %(year)d."
+msgstr "Showing result for: %(month)s %(year)d."
+
+#: apps/videopost/views.py:112
+#, python-format
+msgid "Showing result for: %(day)s %(month)s %(year)d."
+msgstr "Showing result for: %(day)s %(month)s %(year)d."
+
+#: apps/videopost/views.py:143
+#, python-format
+msgid "Showing result for: %(tag)s."
+msgstr "Showing result for: %(tag)s."
+
+#: apps/videopost/views.py:162
+msgid "Create new Video Post."
+msgstr "Create new Video Post."
+
+#: apps/videopost/views.py:184
+msgid "There was an error while saving the Video Post."
+msgstr "There was an error while saving the Video Post."
+
+#: apps/videopost/views.py:202
+msgid ""
+"Video Post successfully created. The video is currently being processed."
+msgstr ""
+"Video Post successfully created. The video is currently being processed."
+
+#: apps/videopost/views.py:207
+msgid "There was an error while uploading the file."
+msgstr "There was an error while uploading the file."
+
+#: apps/videopost/views.py:225
+msgid "Update Video Post"
+msgstr "Update Video Post"
+
+#: apps/videopost/views.py:243
+msgid "Video Post successfully updated."
+msgstr "Video Post successfully updated."
+
+#: apps/videopost/views.py:249 apps/videopost/views.py:263
+msgid "There was an error while updating the Video Post."
+msgstr "There was an error while updating the Video Post."
+
+#: apps/videopost/views.py:282
+msgid "Video Post successfully deleted."
+msgstr "Video Post successfully deleted."
+
+#: apps/videopost/views.py:285
+msgid "There was an error while deleting the Video Post."
+msgstr "There was an error while deleting the Video Post."
+
+#: helpers/date_utils.py:25
+msgid "January"
+msgstr "January"
+
+#: helpers/date_utils.py:26
+msgid "February"
+msgstr "February"
+
+#: helpers/date_utils.py:27
+msgid "March"
+msgstr "March"
+
+#: helpers/date_utils.py:28
+msgid "April"
+msgstr "April"
+
+#: helpers/date_utils.py:29
+msgid "May"
+msgstr "May"
+
+#: helpers/date_utils.py:30
+msgid "June"
+msgstr "June"
+
+#: helpers/date_utils.py:31
+msgid "July"
+msgstr "July"
+
+#: helpers/date_utils.py:32
+msgid "August"
+msgstr "August"
+
+#: helpers/date_utils.py:33
+msgid "September"
+msgstr "September"
+
+#: helpers/date_utils.py:34
+msgid "October"
+msgstr "October"
+
+#: helpers/date_utils.py:35
+msgid "November"
+msgstr "November"
+
+#: helpers/date_utils.py:36
+msgid "December"
+msgstr "December"
+
+#: helpers/date_utils.py:42
+msgid "Monday"
+msgstr "Monday"
+
+#: helpers/date_utils.py:43
+msgid "Tuesday"
+msgstr "Tuesday"
+
+#: helpers/date_utils.py:44
+msgid "Wednesday"
+msgstr "Wednesday"
+
+#: helpers/date_utils.py:45
+msgid "Thursday"
+msgstr "Thursday"
+
+#: helpers/date_utils.py:46
+msgid "Friday"
+msgstr "Friday"
+
+#: helpers/date_utils.py:47
+msgid "Saturday"
+msgstr "Saturday"
+
+#: helpers/date_utils.py:48
+msgid "Sunday"
+msgstr "Sunday"
+
+#: helpers/generation_utils.py:31
+msgid "Archive"
+msgstr "Archive"
+
+#: templates/admin/configuration.html:4
+msgid "Change Configuration"
+msgstr "Change Configuration"
+
+#: templates/admin/configuration.html:57 templates/tag/admin/create.html:13
+#: templates/tag/admin/update.html:13 templates/videopost/admin/create.html:17
+#: templates/videopost/admin/update.html:18
+msgid "Save"
+msgstr "Save"
+
+#: templates/admin/login.html:70
+msgid "Login"
+msgstr "Login"
+
+#: templates/layout/administration.html:38
+msgid "Administrative Panel"
+msgstr "Administrative Panel"
+
+#: templates/layout/administration.html:51
+msgid "Configuration"
+msgstr "Configuration"
+
+#: templates/tag/admin/create.html:4
+msgid "Create a new Tag"
+msgstr "Create a new Tag"
+
+#: templates/tag/admin/delete.html:4
+msgid "Tag Deletion"
+msgstr "Tag Deletion"
+
+#: templates/tag/admin/delete.html:12
+msgid "Are you sure you want to delete the Tag"
+msgstr "Are you sure you want to delete the Tag"
+
+#: templates/tag/admin/delete.html:17 templates/tag/admin/list.html:29
+#: templates/videopost/admin/delete.html:17
+#: templates/videopost/admin/list.html:49
+msgid "Delete"
+msgstr "Delete"
+
+#: templates/tag/admin/list.html:4
+msgid "Tags Administration"
+msgstr "Tags Administration"
+
+#: templates/tag/admin/list.html:10 templates/tag/admin/list.html.py:65
+msgid "Add New Tag"
+msgstr "Add New Tag"
+
+#: templates/tag/admin/list.html:32 templates/videopost/admin/list.html:52
+msgid "Edit"
+msgstr "Edit"
+
+#: templates/tag/admin/list.html:40 templates/tag/admin/list.html.py:42
+#: templates/videopost/admin/list.html:60
+#: templates/videopost/admin/list.html:62
+msgid "First"
+msgstr "First"
+
+#: templates/tag/admin/list.html:41 templates/tag/admin/list.html.py:43
+#: templates/videopost/admin/list.html:61
+#: templates/videopost/admin/list.html:63
+msgid "Prev"
+msgstr "Prev"
+
+#: templates/tag/admin/list.html:54 templates/tag/admin/list.html.py:56
+#: templates/videopost/admin/list.html:74
+#: templates/videopost/admin/list.html:76
+#: templates/videopost/includes/videopost_list.inc:17
+msgid "Next"
+msgstr "Next"
+
+#: templates/tag/admin/list.html:55 templates/tag/admin/list.html.py:57
+#: templates/videopost/admin/list.html:75
+#: templates/videopost/admin/list.html:77
+msgid "Last"
+msgstr "Last"
+
+#: templates/tag/admin/update.html:4
+msgid "Tag Modification"
+msgstr "Tag Modification"
+
+#: templates/videopost/admin/create.html:4
+msgid "Create a new Video Post"
+msgstr "Create a new Video Post"
+
+#: templates/videopost/admin/delete.html:4
+msgid "Video Post Modification"
+msgstr "Video Post Modification"
+
+#: templates/videopost/admin/delete.html:12
+msgid "Are you sure you want to delete the Video Post"
+msgstr "Are you sure you want to delete the Video Post"
+
+#: templates/videopost/admin/list.html:4
+#: templates/videopost/admin/update.html:4
+msgid "Video Post Administration"
+msgstr "Video Post Administration"
+
+#: templates/videopost/admin/list.html:10
+#: templates/videopost/admin/list.html:85
+msgid "Add New Video Post"
+msgstr "Add New Video Post"
+
+#: templates/videopost/admin/list.html:19
+msgid "Publication Date"
+msgstr "Publication Date"
+
+#: templates/videopost/includes/videopost_list.inc:10
+msgid "Previous"
+msgstr "Previous"
+
+#: templates/videopost/includes/videopost_list.inc:14
+msgid "Page"
+msgstr "Page"
+
+#: templates/videopost/includes/videopost_list.inc:14
+msgid "of"
+msgstr "of"

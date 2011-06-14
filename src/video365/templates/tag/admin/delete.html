@@ -1,0 +1,22 @@
+{% extends "layout/administration.html" %}
+{% load i18n %}
+{% block headline %}
+{% trans 'Tag Deletion' %}
+{% endblock %}
+{% block middle %}
+<form action="/admin/tag/delete/{{ tag.id }}/" method="post">
+    {% csrf_token %}
+    <table width="500" border="0" class="admin-form delete-form">
+        <tr>
+            <td id="delete-form-message">
+                {% trans "Are you sure you want to delete the Tag" %}<br>
+				"{{ tag.name }}" 
+            </td>
+        </tr>
+        <tr>
+            <td class="center">
+				<input class="button" id="delete-form-submit" type="submit" value="{% trans 'Delete' %}" />
+            </td>
+        </tr>
+    </table>
+</form>{% endblock %}

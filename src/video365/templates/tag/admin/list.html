@@ -1,0 +1,70 @@
+{% extends "layout/administration.html" %}
+{% load i18n %}
+{% block headline %}
+{% trans 'Tags Administration' %}
+{% endblock %}
+{% block middle %}
+<table class="list-admin" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="list-admin-create">
+            <a class="button" href="/admin/tag/create/">{% trans 'Add New Tag' %}</a>
+        </td>
+    </tr>
+	{% if tags %}
+    <tr>
+        <td class="list-admin-title">
+            {% trans "Name" %}
+        </td>
+        <td class="list-admin-title">
+        </td>
+        <td class="list-admin-title">
+        </td>
+    </tr>
+    {% for tag in tags %}
+    <tr class="{% cycle 'list-admin-row' 'list-admin-evenrow' %}">
+        <td class="list-admin-border-left">
+            {{ tag.name }}
+        </td>
+        <td class="list-admin-actions list-admin-align-center">
+            <a class="list-admin-action" href="/admin/tag/delete/{{ tag.id }}/">{% trans 'Delete' %}</a>
+        </td>
+        <td class="list-admin-border-right list-admin-actions list-admin-align-center">
+            <a class="list-admin-action" href="/admin/tag/edit/{{tag.id}}">{% trans 'Edit' %}</a>
+        </td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <td colspan="5" class="list-admin-pagination">
+            {% if pagination_list.has_other_pages %}
+            <div class="pagination">
+                {%  if pagination_list.has_previous %}<a class="pagination" href="{{prepage}}1{{postpage}}">&lt;&lt;&nbsp;{% trans 'First' %}&nbsp;</a>
+                <a class="pagination" href="{{prepage}}{{pagination_list.previous_page_number}}{{postpage}}">&lt;&nbsp;{% trans 'Prev' %}&nbsp;&nbsp;</a>|
+                {% else %}<span class="pagination">&lt;&lt;&nbsp;{% trans 'First' %}&nbsp;</span>
+                <span class="pagination">&lt;&nbsp;{% trans 'Prev' %}&nbsp;&nbsp;</span>| 
+                {% endif %} 
+                {% for i in page_range %} 
+                {% ifequal i "..." %}
+                {{ i }}&nbsp;| 
+                {% else %} 
+                {% ifequal i|add:"1" pagination_list.number%} <span class="pagination-selected">{{ i|add:"1" }}</span>&nbsp;|
+                {% else %}<a class="pagination" href='{{prepage}}{{ i|add:"1" }}{{postpage}}'>{{ i|add:"1" }}</a>&nbsp;| 
+                {% endifequal %} 
+                {% endifequal %}
+                {% endfor %}
+                {% if pagination_list.has_next %}<a class="pagination" href="{{prepage}}{{pagination_list.next_page_number}}{{postpage}}">&nbsp;&nbsp;{% trans 'Next' %}&nbsp;&gt;</a>
+                <a class="pagination" href="{{prepage|safe}}{{total_pages}}{{postpage}}">&nbsp;{% trans 'Last' %}&nbsp;&gt;&gt;</a>
+                {% else %}<span class="pagination">&nbsp;&nbsp;{% trans 'Next' %}&nbsp;&gt;</span>
+                <span class="pagination">&nbsp;{% trans 'Last' %}&nbsp;&gt;&gt;</span>
+                {% endif %}
+            </div>
+            {% endif %}
+        </td>
+    </tr>
+    <tr>
+		<td id="list-admin-create">
+            <a class="button" href="/admin/tag/create/">{% trans 'Add New Tag' %}</a>
+        </td>
+    </tr>
+	{% endif %}
+</table>
+{% endblock %}

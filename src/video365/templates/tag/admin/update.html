@@ -1,0 +1,18 @@
+{% extends "layout/administration.html" %}
+{% load i18n %}
+{% block headline %}
+{% trans 'Tag Modification' %}
+{% endblock %}
+{% block middle %}
+<form action="/admin/tag/edit/{{ tag.id }}/" method="post">
+  {% csrf_token %}
+    <table width="500" border="0" class="admin-form">
+        {% include "tag/admin/includes/edit.inc" %}
+        <tr>
+            <td colspan="2" class="center">
+                <input type="submit" class="button" value="{% trans 'Save' %}" id="admin-form-submit"/>
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

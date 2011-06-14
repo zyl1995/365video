@@ -1,0 +1,12 @@
+# use glob syntax.
+syntax: glob
+*.elc
+*.pyc
+*~
+.project
+.pydevproject
+.settings
+
+media/uploads/splash/*
+media/uploads/temp/*
+media/uploads/videos/*

@@ -1,0 +1,90 @@
+{% extends "layout/administration.html" %}
+{% load i18n %}
+{% block headline %}
+{% trans 'Video Post Administration' %}
+{% endblock %}
+{% block middle %}
+<table class="list-admin" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="list-admin-create">
+            <a class="button" href="/admin/videopost/create/">{% trans 'Add New Video Post' %}</a>
+        </td>
+    </tr>
+	{% if videoposts %}
+    <tr>
+        <td class="list-admin-title">
+            {% trans "Title" %}
+        </td>
+        <td class="list-admin-title">
+            {% trans "Publication Date" %}
+        </td>
+        <td class="list-admin-title">
+            {% trans "Enabled" %}
+        </td>
+        <td class="list-admin-title">
+            {% trans "State" %}
+        </td>
+        <td class="list-admin-title">
+        </td>
+        <td class="list-admin-title">
+        </td>
+    </tr>
+    {% for videopost in videoposts %}
+    <tr class="{% cycle 'list-admin-row' 'list-admin-evenrow' %}">
+        <td class="list-admin-border-left">
+            {{ videopost.title }}
+        </td>
+        <td class="list-admin-align-center">
+            {{ videopost.publication_date|date:"SHORT_DATE_FORMAT" }}
+        </td>
+        <td class="list-admin-align-center">
+            {% if videopost.enabled %}
+			<img src="{{ MEDIA_URL }}/images/icons/icon-yes.jpg">
+			{% endif %}
+        </td>
+        <td class="list-admin-align-center {% if videopost.state == 0 %}pending{% endif %}{% if videopost.state == 1%}processing{% endif %}{% if videopost.state == 2 %}processed{% endif %}{% if videopost.state == 3 %}processed{% endif %}">
+            {{ videopost.get_state_display }}
+        </td>		
+        <td class="list-admin-action list-admin-align-center">
+            <a class="list-admin-action" href="/admin/videopost/delete/{{ videopost.id }}/">{% trans 'Delete' %}</a>
+        </td>
+        <td class="list-admin-action list-admin-border-right list-admin-align-center">
+            <a class="list-admin-action" href="/admin/videopost/update/{{ videopost.id }}">{% trans 'Edit' %}</a>
+        </td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <td colspan="6" class="list-admin-pagination">
+            {% if pagination_list.has_other_pages %}
+            <div class="pagination">
+                {%  if pagination_list.has_previous %}<a class="pagination" href="{{prepage}}1{{postpage}}">&lt;&lt;&nbsp;{% trans 'First' %}&nbsp;</a>
+                <a class="pagination" href="{{prepage}}{{pagination_list.previous_page_number}}{{postpage}}">&lt;&nbsp;{% trans 'Prev' %}&nbsp;&nbsp;</a>|
+                {% else %}<span class="pagination">&lt;&lt;&nbsp;{% trans 'First' %}&nbsp;</span>
+                <span class="pagination">&lt;&nbsp;{% trans 'Prev' %}&nbsp;&nbsp;</span>| 
+                {% endif %} 
+                {% for i in page_range %} 
+                {% ifequal i "..." %}
+                {{ i }}&nbsp;| 
+                {% else %} 
+                {% ifequal i pagination_list.number%} <span class="pagination-selected">{{ i }}</span>&nbsp;|
+                {% else %}<a class="pagination" href='{{prepage}}{{ i }}{{postpage}}'>{{ i }}</a>&nbsp;| 
+                {% endifequal %} 
+                {% endifequal %}
+                {% endfor %}
+                {% if pagination_list.has_next %}<a class="pagination" href="{{prepage}}{{pagination_list.next_page_number}}{{postpage}}">&nbsp;&nbsp;{% trans 'Next' %}&nbsp;&gt;</a>
+                <a class="pagination" href="{{prepage|safe}}{{total_pages}}{{postpage}}">&nbsp;{% trans 'Last' %}&nbsp;&gt;&gt;</a>
+                {% else %}<span class="pagination">&nbsp;&nbsp;{% trans 'Next' %}&nbsp;&gt;</span>
+                <span class="pagination">&nbsp;{% trans 'Last' %}&nbsp;&gt;&gt;</span>
+                {% endif %}
+            </div>
+            {% endif %}
+        </td>
+    </tr>
+    <tr>
+        <td id="list-admin-create">
+            <a class="button" href="/admin/videopost/create/">{% trans 'Add New Video Post' %}</a>
+        </td>
+    </tr>
+	{% endif %}
+</table>
+{% endblock %}

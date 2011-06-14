@@ -1,0 +1,79 @@
+<!--
+Copyright Cobalys (c) 2011
+
+This file is part of 365Video.
+
+    365Video is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    365Video is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with 365Video.  If not, see <http://www.gnu.org/licenses/>.
+-->
+{% load i18n %}<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link type="image/x-icon" href="{{ MEDIA_URL }}favicon.ico" rel="icon" />
+        <link type="image/x-icon" href="{{ MEDIA_URL }}favicon.ico" rel="shortcut icon" />
+        <title>365Video{% if title %} - {{ title }}{% endif %}</title>
+        <link rel="stylesheet" type="text/css" href= "{{ MEDIA_URL }}css/administration.css">
+        <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-1.6.1.min.js">
+        </script>
+        <link type="text/css" href="{{ MEDIA_URL }}css/start/jquery-ui-1.8.13.custom.css" rel="Stylesheet" />
+        <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-ui-1.8.13.custom.min.js">
+        </script>
+    </head>
+    <body>
+        <img class="logo" src="{{ MEDIA_URL }}images/admin/logo-black.jpg" alt="">
+        <table id="main">
+            <tr>
+                <td id="center-main">
+                    {% include "layout/includes/messages.inc" %}
+                    <form method="POST" action=".">
+                        {% csrf_token %}
+                        <table id="login-table">
+                            <tr>
+                                <td>
+                                    {{ form.username.label_tag }}
+                                </td>
+                                <td>
+                                    {{ form.username }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    {{ form.username.errors }} 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {{ form.password.label_tag }}
+                                </td>
+                                <td>
+                                    {{ form.password }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    {{ form.username.errors }} 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="center">
+                                    <input type="submit" id="login-form-submit" class="button" value="{% trans 'Login' %}"/><input type="hidden" name="next" value="{{ next }}" />
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,351 @@
+/*
+Copyright Cobalys (c) 2011
+
+This file is part of 365Video.
+
+    365Video is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    365Video is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with 365Video.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+*{
+	margin:0px;
+	padding:0px;	
+	font-family: Arial,sans-serif;
+	vertical-align:top;
+	color: #444;
+
+}
+
+
+body{
+	background-image:url('../images/background.jpg');
+    background-position: center top;
+	background-repeat:repeat-y;
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+
+img{
+	border-style:none;
+	border-width:0px;
+}
+
+a{
+	text-decoration:none;
+}
+
+#div-body{
+	background-image:url('../images/background-top.jpg');
+    background-position: center top;
+	background-repeat:no-repeat;
+	width:100%;	
+	padding-bottom: 200px;	
+	margin:0px;
+	border:0px none black;	
+}
+
+#main{
+		width:975px;
+		margin:auto;
+		padding-top:58px;		
+}
+
+#header{
+	height: 125px;
+}
+
+#header-inner{
+		width:1000px;
+		margin:auto;
+}
+
+#logo{
+	margin:20px;
+}
+
+#footer{
+	padding-top:100px;
+	padding-bottom:25px;	
+	text-align:center;
+	font-size:13px;
+}
+
+
+/* Messages */
+*.success{	
+  background-color: #FFFFCC;
+  border: 1px solid #FFAD33;
+  width: 431px;  	
+  margin: auto;
+  margin-top:30px;
+  margin-bottom:30px;
+  text-align: center;
+  padding:20px;
+  font-size:13px;
+}
+
+*.info{
+  background-color: #FFFFCC;
+  border: 1px solid #FFAD33;
+  width: 431px;  	
+  margin: auto;
+  margin-top:30px;
+  margin-bottom:30px;
+  text-align: center;
+  padding:20px;
+  font-size:13px;
+}
+
+*.warning{
+  margin: auto;
+  margin-top:30px;
+  margin-bottom:30px;
+  text-align: center;
+  background-color: #FFFFCC;
+  width: 380px;
+  border: 1px solid #BF3030;
+  padding:20px;
+  font-size:13px;
+}
+
+*.error{
+  margin: auto;
+  margin-top:30px;
+  margin-bottom:30px;
+  text-align: center;
+  background-color: #FFFFCC;
+  width: 380px;
+  border: 1px solid #BF3030;
+  padding:20px;
+  font-size:13px;
+}
+
+div *.errorlist{
+	list-style:none;
+	font-size:13px;
+}
+
+*.errorlist,*.errorlist > li {
+	color:#BF3030;
+	font-family:Arial,sans-serif;
+	font-size:11px;
+	font-weight:bold;
+	margin:0 0 0 8px;
+	padding:0;
+	text-align:left;
+
+}
+/* End Messages */
+
+h3.videopost-date-header{
+	font-family:Arial,sans-serif;
+	font-size:10px;
+	font-weight:bold;
+	font-style:normal;
+	text-transform:uppercase;
+	text-decoration:none;
+	letter-spacing:2.15px;
+	color:#333;
+	padding-left:20px;
+}
+
+
+#sidebar-menu{
+	width: 215px;
+}
+
+#center-main{
+    padding: 10px 10px 10px 25px;
+    width: 713px;
+
+}
+
+div.videopost{
+	margin: 10px 10px 65px;
+}
+ 
+table.tag-sidebar{
+	font-size: 14px;
+    padding: 10px;
+    width: 220px;
+}
+
+#tag-sidebar-title{
+	text-align:center;
+	border-bottom:1px solid #ccc;
+	font-size:16px;
+	margin-bottom: 10px;
+}
+
+p.tag-sidebar-item{
+    font-size: 15px;
+    padding-left: 20px;
+}
+
+p.tag-sidebar-item a{
+	color:#ccc;
+	text-transform: capitalize;
+}
+
+table.date-sidebar{
+	font-size: 14px;
+    padding: 10px;
+    width: 220px;
+	margin-bottom:45px;
+}
+
+td.date-sidebar-item{
+    font-size: 15px;
+    padding-left: 20px;
+}
+
+td.date-sidebar-item a{
+	color:#ccc;
+	text-transform: capitalize;
+}
+
+h1.videopost-title{
+	color:#333;
+	font-size:27px;
+	margin-top:30px;
+}
+
+div.videopost-video{
+	margin-top:25px;
+	margin-bottom:15px;
+	height:390px;
+	clear:both;
+}
+
+p.videopost-description{
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+p.videopost-labels{
+    font-size: 13px;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+
+table.pagination{
+	color: #555555;
+    font-variant: small-caps;
+	width:100%;
+ 
+}
+
+*.pagination-left{
+	width: 175px;	
+	margin-left:80px;
+	text-align:left;
+}
+
+*.pagination-center{
+	margin:auto;
+	text-align:center;	
+}
+
+*.pagination-right{
+	width: 175px;	
+	margin-right:80px;
+	text-align:right;
+}
+
+#headline{
+	border-bottom: 1px solid #999;
+    color: #777777;
+    font-size: 21px;
+    margin-left: 7px;
+    margin-top: 20px;
+}
+
+#sidebar-menu span.ui-icon{
+	background-image: url("start/images/ui-icons_056b93_256x240.png");
+}
+
+div.sidebar-module{	
+	border: 1px solid #01567f;
+    -moz-border-radius-topleft: 7px;
+    -moz-border-radius-topright: 7px;	
+	padding-bottom:10px;
+	margin-top:20px;
+}
+
+h3.date-sidebar-year-collapsed{
+	background-image: url("../images/icons/arrow-right.jpg");
+}	
+
+h3.date-sidebar-year-expanded{
+	background-image: url("../images/icons/arrow-down.jpg");
+}		
+
+h3.date-sidebar-year{
+	background-position:left;
+	background-repeat:no-repeat;
+	padding-left:15px;
+	border-style:none;
+	border-width:0px;
+	font-size:17px;
+	font-style:normal;
+	font-weight:normal;
+	margin-left:20px;
+}
+
+p.date-sidebar-month{
+	padding-left: 60px;
+	border-style:none;
+	border-width:0px;
+	font-size:15px;
+	font-style:normal;
+	font-weight:normal;
+}
+
+#sidebar-menu a{
+	color: #555555;
+}
+
+*.sidebar-module-title{
+    background: url("../images/background/module-title.jpg") repeat-x scroll 50% 50% #0078AE;
+    border-width: 0px;
+	border-style:0px;
+    color: #FFFFFF;
+    font-weight: normal;
+	padding:5px;
+	text-align:center;
+	font-size:15px;
+	-moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+	margin-bottom:10px;
+	cursor:pointer;
+}
+
+*.year-date-sidebar{
+	margin-left:0px;
+}
+
+*.month-date-sidebar{
+	margin-left:0px;
+}
+
+a.player{
+	display:block;width:640px; 
+	height:390px; 
+	margin:auto;
+	background-repeat: no-repeat;
+	background-color: rgb(0, 0, 0);
+	background-position: center center;
+}
