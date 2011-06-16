@@ -123,7 +123,6 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'video365.apps.tag',
     'video365.apps.videopost',
-    'django.contrib.messages',
     'djcelery',
     'djkombu',
 )

@@ -46,7 +46,7 @@ a:hover {
 
 *.button {
     font-size: 13px;
-    background: url('/media/images/button.jpg') repeat-x scroll center bottom #ccc;
+    background-color: #ccc;
     border-color: #DDDDDD #AAAAAA #AAAAAA #DDDDDD;
     border-style: solid;
     border-width: 1px;
