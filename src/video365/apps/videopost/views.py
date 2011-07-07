@@ -17,8 +17,8 @@ This file is part of 365Video.
     You should have received a copy of the GNU General Public License
     along with 365Video.  If not, see <http://www.gnu.org/licenses/>.
 '''
-from .models import VideoPost
-from apps.tag.models import Tag
+from video365.apps.videopost.models import VideoPost
+from video365.apps.tag.models import Tag
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse

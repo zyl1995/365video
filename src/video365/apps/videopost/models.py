@@ -17,7 +17,7 @@ This file is part of 365Video.
     You should have received a copy of the GNU General Public License
     along with 365Video.  If not, see <http://www.gnu.org/licenses/>.
 '''
-from ..tag.models import Tag
+from video365.apps.tag.models import Tag
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
