@@ -22,7 +22,7 @@ from video365.apps.videopost.models import VideoPost
 from video365.helpers.generation_utils import generate_date_menu, \
     generate_tag_files
 import os
-import settings
+import video365.settings
 import subprocess
 
 
