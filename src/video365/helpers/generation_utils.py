@@ -22,7 +22,7 @@ from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
 from video365.helpers.date_utils import get_month_name
 import json
-import settings
+import video365.settings
 
 def generate_date_menu():
         cursor = connection.cursor()
