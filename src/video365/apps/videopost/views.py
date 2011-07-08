@@ -36,7 +36,7 @@ from video365.helpers.date_utils import get_day_name, get_month_name
 from video365.helpers.pagination_utils import paginator_simple, \
     paginator_numeric
 import datetime
-import settings
+import video365.settings
 
 
 def retrieve(request, videopost_id):
