@@ -17,12 +17,12 @@ This file is part of 365Video.
     You should have received a copy of the GNU General Public License
     along with 365Video.  If not, see <http://www.gnu.org/licenses/>.
 '''
+from django.conf import settings
 from django.db import connection
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
 from video365.helpers.date_utils import get_month_name
 import json
-import video365.settings
 
 def generate_date_menu():
         cursor = connection.cursor()

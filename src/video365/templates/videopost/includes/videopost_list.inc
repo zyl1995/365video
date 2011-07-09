@@ -7,14 +7,14 @@
 {% if videoposts.has_previous or videoposts.has_next %}
 <table class="pagination">
     <td class="pagination-left">
-        {% if videoposts.has_previous %}<a class="pagination-left" href="/{{ videoposts.previous_page_number }}/">{% trans 'Previous' %}</a>
+        {% if videoposts.has_previous %}<a class="pagination-left" href="{{ PATH }}{{ videoposts.previous_page_number }}/">{% trans 'Previous' %}</a>
         {% endif %} 
     </td>
     <td class="pagination-center">
         <span class="pagination-center">{% trans 'Page' %} {{ videoposts.number }} {% trans 'of' %} {{ videoposts.paginator.num_pages }}.</span>
     </td>
     <td class="pagination-right" >
-        {% if videoposts.has_next %}<a class="pagination-right" href="/{{ videoposts.next_page_number }}/">{% trans 'Next' %}</a>
+        {% if videoposts.has_next %}<a class="pagination-right" href="{{ PATH }}{{ videoposts.next_page_number }}/">{% trans 'Next' %}</a>
         {% endif %} 
     </td>
 </table>

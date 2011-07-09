@@ -4,7 +4,7 @@
 {% trans 'Create a new Tag' %}
 {% endblock %}
 {% block middle %}
-<form action="/admin/tag/create/" method="post">
+<form action="{{ PATH }}admin/tag/create/" method="post">
   {% csrf_token %}
     <table width="500" border="0" class="admin-form">
         {% include "tag/admin/includes/edit.inc" %}

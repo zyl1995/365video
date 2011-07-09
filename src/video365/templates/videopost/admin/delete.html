@@ -4,7 +4,7 @@
 {% trans 'Video Post Modification' %}
 {% endblock %}
 {% block middle %}
-<form action="/admin/videopost/delete/{{ videopost.id }}/" method="post">
+<form action="{{ PATH }}admin/videopost/delete/{{ videopost.id }}/" method="post">
     {% csrf_token %}
     <table width="500" border="0" class="admin-form delete-form">
         <tr>

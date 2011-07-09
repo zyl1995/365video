@@ -37,22 +37,22 @@ def admin_panel(request):
 
 @never_cache
 @login_required
-def configuration(request):
+def change_password(request):
     variables = dict()
     if request.POST:
         try:
             configuration_form = PasswordChangeForm(user=request.user, data=request.POST)
             if configuration_form.is_valid():
                 configuration_form.save()
-                messages.success(request, _('Configuration changed.'))
+                messages.success(request, _('Password changed.'))
                 return HttpResponseRedirect(reverse(admin_panel))
             else:
                 messages.warning(request, _('Correct the errors bellow.'))
         except:
-            messages.error(request, _('There was an error while changing the configuration.'))
+            messages.error(request, _('There was an error while changing the Password.'))
     else:
         configuration_form = PasswordChangeForm(user=request.user)
     variables['form'] = configuration_form
-    t = get_template('admin/configuration.html')
+    t = get_template('admin/change-password.html')
     html = t.render(RequestContext(request, variables))
     return HttpResponse(html)

@@ -20,7 +20,7 @@ This file is part of 365Video.
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
-
+from django.conf import settings
 
 class Tag(models.Model):
     name = models.CharField(unique=True, max_length=25, verbose_name=_('Name'), null=False, blank=False)    
@@ -34,7 +34,7 @@ class Tag(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return "/tag/%i/%s.html" % (self.id, slugify(self.name))
+        return "%stag/%i/%s.html" % (settings.APP_PATH, self.id, slugify(self.name))
 
     def get_slug(self):
         return slugify(self.name)

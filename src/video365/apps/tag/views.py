@@ -17,7 +17,6 @@ This file is part of 365Video.
     You should have received a copy of the GNU General Public License
     along with 365Video.  If not, see <http://www.gnu.org/licenses/>.
 '''
-from video365.apps.tag.models import Tag
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
@@ -25,10 +24,11 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.template.loader import get_template
 from django.utils.translation import ugettext as _
+from django.views.decorators.cache import never_cache
 from video365.apps.tag.forms import TagForm
+from video365.apps.tag.models import Tag
 from video365.apps.tag.tasks import UpdateTagFilesTask
 from video365.helpers.pagination_utils import paginator_numeric
-from django.views.decorators.cache import never_cache
 
 @never_cache
 @login_required

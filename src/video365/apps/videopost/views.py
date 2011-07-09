@@ -17,8 +17,7 @@ This file is part of 365Video.
     You should have received a copy of the GNU General Public License
     along with 365Video.  If not, see <http://www.gnu.org/licenses/>.
 '''
-from video365.apps.videopost.models import VideoPost
-from video365.apps.tag.models import Tag
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
@@ -28,15 +27,16 @@ from django.template import RequestContext
 from django.template.loader import get_template
 from django.utils.translation import ugettext as _
 from django.views.decorators.cache import never_cache
+from video365.apps.tag.models import Tag
 from video365.apps.videopost.forms import VideoPostCreateForm, \
     VideoPostUpdateForm
+from video365.apps.videopost.models import VideoPost
 from video365.apps.videopost.tasks import CreateVideopostTask, \
     DeleteAsociatedFilesTask, DeleteVideopostTask, EditVideopostTask
 from video365.helpers.date_utils import get_day_name, get_month_name
 from video365.helpers.pagination_utils import paginator_simple, \
     paginator_numeric
 import datetime
-import video365.settings
 
 
 def retrieve(request, videopost_id):

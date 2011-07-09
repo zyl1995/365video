@@ -18,11 +18,11 @@ This file is part of 365Video.
     along with 365Video.  If not, see <http://www.gnu.org/licenses/>.
 '''
 from celery.task import Task
+from django.conf import settings
 from video365.apps.videopost.models import VideoPost
 from video365.helpers.generation_utils import generate_date_menu, \
     generate_tag_files
 import os
-import video365.settings
 import subprocess
 
 

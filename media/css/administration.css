@@ -120,7 +120,16 @@ table.password-change-form input[type = "password"]{
 #header-top-right {
     background-image: url('../images/admin/background-top.jpg');
     background-position: top;
+    color: #EEEEEE;
+    padding-right: 45px;
+    padding-top: 6px;
+    text-align: right;
 }
+
+#header-top-right a{
+    color: #EEEEEE;
+}
+
 
 #header-inner {
     width: 100%;
@@ -429,4 +438,5 @@ font-size: 21px; margin-left: 91px; color: rgb(119, 119, 119);
 *.error{
 	color:red;
 }
+
  

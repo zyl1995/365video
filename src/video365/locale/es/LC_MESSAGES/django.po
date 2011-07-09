@@ -8,18 +8,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 17:44-0300\n"
+"POT-Creation-Date: 2011-07-09 17:07-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps/administration/views.py:47
-msgid "Configuration changed."
-msgstr "Configuración Actualizada."
+msgid "Password changed."
+msgstr "Contraseña Actualizada."
 
 #: apps/administration/views.py:50 apps/tag/views.py:76 apps/tag/views.py:108
 #: apps/videopost/views.py:209 apps/videopost/views.py:246
@@ -27,24 +28,24 @@ msgid "Correct the errors bellow."
 msgstr "Corrija los siguientes Errores."
 
 #: apps/administration/views.py:52
-msgid "There was an error while changing the configuration."
-msgstr "Ocurrió un error al actualizar la configuración."
+msgid "There was an error while changing the Password."
+msgstr "Ocurrió un error al actualizar la Contraseña."
 
 #: apps/tag/forms.py:25 apps/tag/models.py:26 templates/tag/admin/list.html:16
 msgid "Name"
 msgstr "Nombre"
 
-#: apps/tag/models.py:30 apps/videopost/models.py:44
+#: apps/tag/models.py:30 apps/videopost/models.py:45
 msgid "Tag"
 msgstr "Etiqueta"
 
 #: apps/tag/models.py:31 apps/videopost/forms.py:28 apps/videopost/forms.py:37
-#: helpers/generation_utils.py:69 templates/layout/administration.html:61
+#: helpers/generation_utils.py:69 templates/layout/administration.html:57
 msgid "Tags"
 msgstr "Etiquetas"
 
 #: apps/tag/views.py:50 apps/videopost/views.py:72 apps/videopost/views.py:120
-#: apps/videopost/views.py:148 apps/videopost/views.py:310
+#: apps/videopost/views.py:148 apps/videopost/views.py:308
 msgid "No Results Found."
 msgstr "Su búsqueda no produjo resultados."
 
@@ -73,57 +74,57 @@ msgid "Tag successfully deleted."
 msgstr "La Etiqueta se ha eliminado con éxito."
 
 #: apps/videopost/forms.py:25 apps/videopost/forms.py:32
-#: apps/videopost/models.py:38 templates/videopost/admin/list.html:16
+#: apps/videopost/models.py:39 templates/videopost/admin/list.html:16
 msgid "Title"
 msgstr "Titulo"
 
 #: apps/videopost/forms.py:26 apps/videopost/forms.py:33
-#: apps/videopost/models.py:39
+#: apps/videopost/models.py:40
 msgid "Description"
 msgstr "Descripción"
 
 #: apps/videopost/forms.py:27 apps/videopost/forms.py:36
-#: apps/videopost/models.py:42 templates/videopost/admin/list.html:22
+#: apps/videopost/models.py:43 templates/videopost/admin/list.html:22
 msgid "Enabled"
 msgstr "Activado"
 
-#: apps/videopost/forms.py:34 apps/videopost/models.py:40
+#: apps/videopost/forms.py:34 apps/videopost/models.py:41
 msgid "Splash Image"
 msgstr "Imagen de Presentación"
 
-#: apps/videopost/forms.py:35 apps/videopost/models.py:41
+#: apps/videopost/forms.py:35 apps/videopost/models.py:42
 msgid "Video"
 msgstr "Vídeo"
 
-#: apps/videopost/models.py:32
+#: apps/videopost/models.py:33
 msgid "Pending"
 msgstr "Pendiente"
 
-#: apps/videopost/models.py:33
+#: apps/videopost/models.py:34
 msgid "Processing"
 msgstr "En Proceso"
 
-#: apps/videopost/models.py:34
+#: apps/videopost/models.py:35
 msgid "Ready"
 msgstr "Listo"
 
-#: apps/videopost/models.py:35
+#: apps/videopost/models.py:36
 msgid "Error"
 msgstr "Error"
 
-#: apps/videopost/models.py:45
+#: apps/videopost/models.py:46
 msgid "Locked"
 msgstr "Bloqueado"
 
-#: apps/videopost/models.py:46 templates/videopost/admin/list.html:25
+#: apps/videopost/models.py:47 templates/videopost/admin/list.html:25
 msgid "State"
 msgstr "Estado"
 
-#: apps/videopost/models.py:49
+#: apps/videopost/models.py:50
 msgid "Video Post"
 msgstr "Vídeo Post"
 
-#: apps/videopost/models.py:50 templates/layout/administration.html:56
+#: apps/videopost/models.py:51 templates/layout/administration.html:52
 msgid "Video Posts"
 msgstr "Vídeo Post"
 
@@ -172,15 +173,15 @@ msgstr "Actualizar el Vídeo Post"
 msgid "Video Post successfully updated."
 msgstr "Vídeo post creado con éxito."
 
-#: apps/videopost/views.py:249 apps/videopost/views.py:263
+#: apps/videopost/views.py:249 apps/videopost/views.py:261
 msgid "There was an error while updating the Video Post."
 msgstr "Ocurrió un error al actualizar el Vídeo Post."
 
-#: apps/videopost/views.py:282
+#: apps/videopost/views.py:280
 msgid "Video Post successfully deleted."
 msgstr "Vídeo Post creado con éxito."
 
-#: apps/videopost/views.py:285
+#: apps/videopost/views.py:283
 msgid "There was an error while deleting the Video Post."
 msgstr "Ocurrió un error al actualizar el Vídeo Post."
 
@@ -264,11 +265,12 @@ msgstr "Domingo"
 msgid "Archive"
 msgstr "Archivo"
 
-#: templates/admin/configuration.html:4
-msgid "Change Configuration"
-msgstr "Cambiar Configuración"
+#: templates/admin/change-password.html:4
+#: templates/layout/administration.html:41
+msgid "Change Password"
+msgstr "Modificar Contraseña"
 
-#: templates/admin/configuration.html:57 templates/tag/admin/create.html:13
+#: templates/admin/change-password.html:57 templates/tag/admin/create.html:13
 #: templates/tag/admin/update.html:13 templates/videopost/admin/create.html:17
 #: templates/videopost/admin/update.html:18
 msgid "Save"
@@ -278,13 +280,21 @@ msgstr "Guardar"
 msgid "Login"
 msgstr "Ingreso"
 
+#: templates/admin/logout.html:38
+msgid "You have been logged out."
+msgstr "Sesión terminada"
+
+#: templates/admin/logout.html:38
+msgid "Click here to Log in again."
+msgstr "Iniciar sesión de nuevo"
+
 #: templates/layout/administration.html:38
 msgid "Administrative Panel"
 msgstr "Panel Administrativo"
 
-#: templates/layout/administration.html:51
-msgid "Configuration"
-msgstr "Configuración"
+#: templates/layout/administration.html:41
+msgid "Log out"
+msgstr "Terminar Sesión"
 
 #: templates/tag/admin/create.html:4
 msgid "Create a new Tag"
@@ -298,8 +308,8 @@ msgstr "Eliminar Etiqueta"
 msgid "Are you sure you want to delete the Tag"
 msgstr "¿Está seguro de que quiere eliminar la Etiqueta"
 
-#: templates/tag/admin/delete.html:17 templates/tag/admin/list.html:29
-#: templates/videopost/admin/delete.html:17
+#: templates/tag/admin/delete.html:18 templates/tag/admin/list.html:29
+#: templates/videopost/admin/delete.html:18
 #: templates/videopost/admin/list.html:49
 msgid "Delete"
 msgstr "Eliminar"
@@ -331,7 +341,6 @@ msgstr "Anterior"
 #: templates/tag/admin/list.html:54 templates/tag/admin/list.html.py:56
 #: templates/videopost/admin/list.html:74
 #: templates/videopost/admin/list.html:76
-#: templates/videopost/includes/videopost_list.inc:17
 msgid "Next"
 msgstr "Próximo"
 
@@ -370,15 +379,3 @@ msgstr "Crear un nuevo Vídeo Post"
 #: templates/videopost/admin/list.html:19
 msgid "Publication Date"
 msgstr "Fecha de Publicación"
-
-#: templates/videopost/includes/videopost_list.inc:10
-msgid "Previous"
-msgstr "Anterior"
-
-#: templates/videopost/includes/videopost_list.inc:14
-msgid "Page"
-msgstr "Pagina"
-
-#: templates/videopost/includes/videopost_list.inc:14
-msgid "of"
-msgstr "de"

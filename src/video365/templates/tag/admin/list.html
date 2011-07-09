@@ -7,7 +7,7 @@
 <table class="list-admin" cellpadding="0" cellspacing="0">
     <tr>
         <td id="list-admin-create">
-            <a class="button" href="/admin/tag/create/">{% trans 'Add New Tag' %}</a>
+            <a class="button" href="{{ PATH }}admin/tag/create/">{% trans 'Add New Tag' %}</a>
         </td>
     </tr>
 	{% if tags %}
@@ -26,10 +26,10 @@
             {{ tag.name }}
         </td>
         <td class="list-admin-actions list-admin-align-center">
-            <a class="list-admin-action" href="/admin/tag/delete/{{ tag.id }}/">{% trans 'Delete' %}</a>
+            <a class="list-admin-action" href="{{ PATH }}admin/tag/delete/{{ tag.id }}/">{% trans 'Delete' %}</a>
         </td>
         <td class="list-admin-border-right list-admin-actions list-admin-align-center">
-            <a class="list-admin-action" href="/admin/tag/edit/{{tag.id}}">{% trans 'Edit' %}</a>
+            <a class="list-admin-action" href="{{ PATH }}admin/tag/edit/{{tag.id}}">{% trans 'Edit' %}</a>
         </td>
     </tr>
     {% endfor %}
@@ -62,7 +62,7 @@
     </tr>
     <tr>
 		<td id="list-admin-create">
-            <a class="button" href="/admin/tag/create/">{% trans 'Add New Tag' %}</a>
+            <a class="button" href="{{ PATH }}admin/tag/create/">{% trans 'Add New Tag' %}</a>
         </td>
     </tr>
 	{% endif %}

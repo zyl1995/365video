@@ -19,7 +19,6 @@ This file is part of 365Video.
 '''
 from django.core.paginator import Paginator
 
-
 def paginator_simple(items_list, max_results, page):
     paginator = Paginator(items_list, max_results)
     try:

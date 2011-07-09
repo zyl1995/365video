@@ -1,101 +1,113 @@
-# Django settings for video365 project.
+# -*- coding: utf-8 -*-
+'''
+Copyright Cobalys.com (c) 2011
+
+This file is part of 365Video.
+
+    365Video is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    365Video is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with 365Video.  If not, see <http://www.gnu.org/licenses/>.
+'''
+'''
+Load Celery
+''' 
 import djcelery
 djcelery.setup_loader()
 
+
+'''
+Production Settings
+'''
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+SITE_ID = 1
+ROOT_URLCONF = 'video365.urls'
+SECRET_KEY = '2^4=@x=c-cp&j95&%zk8@bf_(*!!aw$^l85dp0=&w-krc2#)t)'
 
+
+'''
+Administrators and Error Notification
+'''
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+          #('Your name here', 'youmail@example.com'),
 )
-
 MANAGERS = ADMINS
+EMAIL_SUBJECT_PREFIX = '[DJANGO-365VIDEO]'
+SEND_BROKEN_LINKS_EMAIL = False
 
+'''
+Mail
+'''
+#EMAIL_USE_TLS = True
+#EMAIL_HOST = 'smtp.example.com'
+#EMAIL_HOST_USER = 'notification@example.com'
+#EMAIL_HOST_PASSWORD = 'password'
+#EMAIL_PORT = 587
+
+
+'''
+Database
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'NAME': '',                           # Or path to database file if using sqlite3.
+        'USER': '',                           # Not used with sqlite3.
+        'PASSWORD': '',                       # Not used with sqlite3.
+        'HOST': '',                           # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                           # Set to empty string for default. Not used with sqlite3.
     }
 }
 
-# Local time zone for this installation. Choices can be found here:
-# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
-# although not all choices may be available on all operating systems.
-# On Unix systems, a value of None will cause Django to use the same
-# timezone as the operating system.
-# If running in a Windows environment this must be set to the same as your
-# system time zone.
+
+'''
+Internationalization
+'''
 TIME_ZONE = 'America/Chicago'
-
-# Language code for this installation. All choices can be found here:
-# http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en'
-
-SITE_ID = 1
-
-# If you set this to False, Django will make some optimizations so as not
-# to load the internationalization machinery.
 USE_I18N = True
-
-# If you set this to False, Django will not format dates, numbers and
-# calendars according to the current locale
 USE_L10N = True
-
 DEFAULT_CHARSET = 'utf-8'
 FORMAT_MODULE_PATH = 'video365.formats'
 
-#Mail Settings
-EMAIL_USE_TLS = True
-EMAIL_HOST = ''
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_PORT = 587
-
-
-
-# Absolute filesystem path to the directory that holds the application files.
+'''
+Directories
+'''
 APPLICATION_DIR = '/usr/django/video365/'
-
-# Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/home/media/media.lawrence.com/"
 MEDIA_ROOT = '/var/www/media/'
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash if there is a path component (optional in other cases).
-# Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = '/media/'
-
-LOGIN_REDIRECT_URL = '/admin/'
-LOGIN_URL = '/admin/login/'
-
-# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
-# trailing slash.
-# Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/admin/'
-
-# Absolute filesystem path to the directory that will hold generated template files..
 GENERATOR_DIR =  '%s/templates/layout/generated/' % APPLICATION_DIR
+TEMPLATE_DIRS = (
+                 '%stemplates' % APPLICATION_DIR
+                )
 
-PATH_VIDEOS = '%suploads/videos/'  % MEDIA_ROOT
+PATH_VIDEOS = '%suploads/videos/' % MEDIA_ROOT
 PATH_TEMP = '%suploads/temp/' % MEDIA_ROOT
-PATH_SPLASH = '%suploads/splash/'  % MEDIA_ROOT
+PATH_SPLASH = '%suploads/splash/' % MEDIA_ROOT
 
-STATIC_DOC_ROOT = MEDIA_ROOT
+APP_DOMAIN = "127.0.0.1"
+APP_PATH = "/"
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = '3*=@24vz8fgj8g7er5gedr*g%%##0j7qfz'
+MEDIA_URL = '/media%s' % APP_PATH
+LOGIN_REDIRECT_URL = '%sadmin/' % APP_PATH
+LOGIN_URL = '%sadmin/login/' % APP_PATH
 
-# List of callables that know how to import templates from various sources.
+
+'''
+Loaders
+'''
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
 )
-
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 MIDDLEWARE_CLASSES = (
@@ -105,13 +117,12 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 )
-
-ROOT_URLCONF = 'video365.urls'
-
-TEMPLATE_DIRS = (
-    '%stemplates' % APPLICATION_DIR,
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.media",
+    "django.core.context_processors.auth",
+    "django.core.context_processors.request",
+    'video365.helpers.processors.path_context_processor',
 )
-
 BROKER_BACKEND = "djkombu.transport.DatabaseTransport"
 
 INSTALLED_APPS = (

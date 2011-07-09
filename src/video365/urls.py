@@ -19,9 +19,9 @@ This file is part of 365Video.
 '''
 from django.conf.urls.defaults import *
 from video365.apps.administration import views as administration_views
-from video365.apps.videopost import views as videopost_views
 from video365.apps.tag import views as tag_views
-import settings
+from video365.apps.videopost import views as videopost_views
+import video365.settings
 
 urlpatterns = patterns('',
     (r'^permalink/(?P<videopost_id>\d+)/$', videopost_views.retrieve),  # Retrieve
@@ -51,7 +51,7 @@ urlpatterns += patterns('',
 
 urlpatterns += patterns('',
     (r'^admin/$', administration_views.admin_panel),                          
-    (r'^admin/configuration/$', administration_views.configuration),
+    (r'^admin/change-password/$', administration_views.change_password),
     (r'^admin/login/$', 'django.contrib.auth.views.login', {'template_name': 'admin/login.html'}),
     (r'^admin/logout/$', 'django.contrib.auth.views.logout', {'template_name': 'admin/logout.html'}),
 )
@@ -60,8 +60,3 @@ urlpatterns += patterns('',
     (r'^index.html$', videopost_views.retrieve_all),
     (r'^$', videopost_views.retrieve_all),   
 )
-
-if settings.DEBUG:
-    urlpatterns += patterns('',
-        (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_DOC_ROOT}),
-    )
