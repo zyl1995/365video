@@ -70,6 +70,7 @@ def create(request):
                 tag = Tag()
                 tag.name = name
                 tag.save()
+                UpdateTagFilesTask.delay()                
                 messages.success(request, _('Tag successfully created.'))
                 return HttpResponseRedirect(reverse(admin_index))
             else:

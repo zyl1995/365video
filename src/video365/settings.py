@@ -82,8 +82,11 @@ FORMAT_MODULE_PATH = 'video365.formats'
 '''
 Directories
 '''
+APP_DOMAIN = "127.0.0.1"
+APP_PATH = "/"
+
 APPLICATION_DIR = '/usr/django/video365/'
-MEDIA_ROOT = '/var/www/media/'
+MEDIA_ROOT = '/var/www/media%s' % APP_PATH
 GENERATOR_DIR =  '%s/templates/layout/generated/' % APPLICATION_DIR
 TEMPLATE_DIRS = (
                  '%stemplates' % APPLICATION_DIR
@@ -92,9 +95,6 @@ TEMPLATE_DIRS = (
 PATH_VIDEOS = '%suploads/videos/' % MEDIA_ROOT
 PATH_TEMP = '%suploads/temp/' % MEDIA_ROOT
 PATH_SPLASH = '%suploads/splash/' % MEDIA_ROOT
-
-APP_DOMAIN = "127.0.0.1"
-APP_PATH = "/"
 
 MEDIA_URL = '/media%s' % APP_PATH
 LOGIN_REDIRECT_URL = '%sadmin/' % APP_PATH

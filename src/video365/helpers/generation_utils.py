@@ -21,6 +21,7 @@ from django.conf import settings
 from django.db import connection
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
+from video365.apps.tag.models import Tag
 from video365.helpers.date_utils import get_month_name
 import json
 
@@ -44,7 +45,7 @@ def generate_date_menu():
                 line += "</a></h3>"
                 line += "<div class='month-date-sidebar'>"
                 iteration_year = year_number
-            line += "<p class='date-sidebar-month'><a href='/date/1/%d/%d/'>" % (year_number, month_number)
+            line += "<p class='date-sidebar-month'><a href='%sdate/1/%d/%d/'>" % (settings.APP_PATH, year_number, month_number)
             line += "%s (%d)" % (month_name, total)
             line += "</a></p>"
         line += "</div>"
@@ -68,33 +69,44 @@ def generate_tag_files():
     line = "<div class='sidebar-module'>"
     line += "<p id='tag-sidebar-title' class='sidebar-module-title'>" + _("Tags") + "</p>"
     line += "<div>"
-    list_tags = []
     for row in cursor.fetchall():
         count = row[0]
         tag_id = row[1]
         tag_name = row[2]
         tag_name_slug = slugify(tag_name)
         line += "<p class='tag-sidebar-item'>"
-        line += "<a href='/tag/%d/%s.html'>%s (%d)</a>" % (tag_id, tag_name_slug, tag_name, count)
+        line += "<a href='%stag/%d/%s.html'>%s (%d)</a>" % (settings.APP_PATH, tag_id, tag_name_slug, tag_name, count)
         line += "</p>"
-        list_tags.append(tag_name)
     line += "</div>"
     line += "</div>"
-    line2 = "availableTags = "
-    line2 += json.dumps(list_tags)    
-    line2 += ";"
+
     line = line.encode("utf-8")
-    line2 = line2.encode("utf-8")    
     try:
         gendir = '%s/tag_menu.inc' % settings.GENERATOR_DIR
-        gendir2 = '%s/js_tags.inc' % settings.GENERATOR_DIR
         f = open(gendir, "w")
-        f2 = open(gendir2, "w")
         try:
             f.write(line)
-            f2.write(line2)
+        finally:
+            f.close()           
+    except IOError:
+        pass
+    
+def generate_tag_js():
+    tags = Tag.objects.all()
+    list_tags = []
+    for tag in tags:
+        tag_name = tag.name
+        list_tags.append(tag_name)
+    line = "availableTags = "
+    line += json.dumps(list_tags)    
+    line += ";"
+    line = line.encode("utf-8")
+    try:
+        gendir = '%s/js_tags.inc' % settings.GENERATOR_DIR
+        f = open(gendir, "w")
+        try:
+            f.write(line)
         finally:
             f.close()
-            f2.close()            
     except IOError:
         pass

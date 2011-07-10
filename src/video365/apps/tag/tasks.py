@@ -19,7 +19,7 @@ This file is part of 365Video.
 '''
 from celery.task import Task
 from video365.helpers.generation_utils import generate_date_menu, \
-    generate_tag_files
+    generate_tag_files, generate_tag_js
 
 
 class UpdateTagFilesTask(Task):
@@ -31,4 +31,5 @@ class UpdateTagFilesTask(Task):
         logger.info("Starting Tag Deletion...")
         generate_date_menu()
         generate_tag_files()
+        generate_tag_js()
         return "Ready"

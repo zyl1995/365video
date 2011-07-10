@@ -187,6 +187,10 @@ div.footer {
 	color:#555;
 }
 
+div.footer *{
+	color:#555555;
+}
+
 #sidebar-menu {
     vertical-align: top;
     width: 220px;
@@ -378,6 +382,11 @@ table.delete-form {
   text-align: center;
   padding:20px;
   font-size:13px;
+}
+
+*.success *{
+	font-size: 13px;
+	color:	#000000;
 }
 
 *.info{

@@ -46,10 +46,10 @@
             {{ videopost.get_state_display }}
         </td>		
         <td class="list-admin-action list-admin-align-center">
-            <a class="list-admin-action" href="/admin/videopost/delete/{{ videopost.id }}/">{% trans 'Delete' %}</a>
+            <a class="list-admin-action" href="{{ PATH }}admin/videopost/delete/{{ videopost.id }}/">{% trans 'Delete' %}</a>
         </td>
         <td class="list-admin-action list-admin-border-right list-admin-align-center">
-            <a class="list-admin-action" href="/admin/videopost/update/{{ videopost.id }}">{% trans 'Edit' %}</a>
+            <a class="list-admin-action" href="{{ PATH }}admin/videopost/update/{{ videopost.id }}">{% trans 'Edit' %}</a>
         </td>
     </tr>
     {% endfor %}
