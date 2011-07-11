@@ -7,6 +7,6 @@ syntax: glob
 .pydevproject
 .settings
 
-media/uploads/splash/*
-media/uploads/temp/*
-media/uploads/videos/*
+media/uploads/splash/
+media/uploads/temp/
+media/uploads/videos/
