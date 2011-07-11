@@ -66,20 +66,23 @@ def generate_date_menu():
 def generate_tag_files():
     cursor = connection.cursor()
     cursor.execute('SELECT COUNT(1), tag_tag.id, tag_tag.name  FROM tag_tag, videopost_videopost, videopost_videopost_tags WHERE videopost_videopost.id = videopost_videopost_tags.videopost_id AND tag_tag.id = videopost_videopost_tags.tag_id AND videopost_videopost.locked = 0 AND videopost_videopost.enabled = 1 GROUP BY tag_tag.id')
-    line = "<div class='sidebar-module'>"
-    line += "<p id='tag-sidebar-title' class='sidebar-module-title'>" + _("Tags") + "</p>"
-    line += "<div>"
-    for row in cursor.fetchall():
-        count = row[0]
-        tag_id = row[1]
-        tag_name = row[2]
-        tag_name_slug = slugify(tag_name)
-        line += "<p class='tag-sidebar-item'>"
-        line += "<a href='%stag/%d/%s.html'>%s (%d)</a>" % (settings.APP_PATH, tag_id, tag_name_slug, tag_name, count)
-        line += "</p>"
-    line += "</div>"
-    line += "</div>"
-
+    if cursor.rowcount > 0:
+	    line = "<div class='sidebar-module'>"
+	    line += "<p id='tag-sidebar-title' class='sidebar-module-title'>" + _("Tags") + "</p>"
+	    line += "<div>"
+	    for row in cursor.fetchall():
+		count = row[0]
+		tag_id = row[1]
+		tag_name = row[2]
+		tag_name_slug = slugify(tag_name)
+		line += "<p class='tag-sidebar-item'>"
+		line += "<a href='%stag/%d/%s.html'>%s (%d)</a>" % (settings.APP_PATH, tag_id, tag_name_slug, tag_name, count)
+		line += "</p>"
+	    line += "</div>"
+	    line += "</div>"
+    else:
+	    line = ""
+	
     line = line.encode("utf-8")
     try:
         gendir = '%s/tag_menu.inc' % settings.GENERATOR_DIR

@@ -21,7 +21,7 @@ from celery.task import Task
 from django.conf import settings
 from video365.apps.videopost.models import VideoPost
 from video365.helpers.generation_utils import generate_date_menu, \
-    generate_tag_files
+    generate_tag_files, generate_tag_js
 import os
 import subprocess
 
@@ -61,6 +61,7 @@ class CreateVideopostTask(Task):
             pass
         generate_date_menu()
         generate_tag_files()
+        generate_tag_js()
         return "Ready"
 
 
@@ -108,6 +109,7 @@ class DeleteVideopostTask(Task):
             pass
         generate_date_menu()
         generate_tag_files()
+        generate_tag_js()
         return "Ready"
 
 
@@ -120,4 +122,5 @@ class EditVideopostTask(Task):
         logger.info("Starting Video Post edition %s" % videopost_id)
         generate_date_menu()
         generate_tag_files()
+        generate_tag_js()
         return "Ready"
